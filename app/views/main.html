@@ -1,0 +1,23 @@
+<div class="jumbotron">
+  <h1>'Allo, 'Allo!</h1>
+  <p class="lead">
+    <img src="images/yeoman.png" alt="I'm Yeoman">
+  </p>
+</div>
+
+<div ng-controller="MainCtrl" class="row marketing">
+  <form>
+    Site: <input type="text" ng-model="site.url">
+    <button class="btn btn-lg btn-success" ng-click="submit()" >Submit</button>
+  </form>
+  
+  <!--h1>You entered: {{site}}</h1-->
+  <!-- Results -->
+  <div>
+      <div ng-if="loading" class="progress">
+          <div class="indeterminate"></div>
+      </div>
+      <div ng-if="results.error === false" ng-include="'views/partials/_pageSpeedResult.html'" class=""></div>
+      <div ng-if="results.error === true">Error</div>    
+  </div>
+</div>
