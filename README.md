@@ -9,7 +9,7 @@ If you want try yourself, you need first `nodejs` and `npm` installed.
 
 #### Clone and install
 ```sh
-$ git clone https://github.com/LasaleFamine/ng-pagespeed-cs50x2016 [optional name]
+$ git clone https://github.com/LasaleFamine/ng-pagespeed-cs50x [optional name]
 $ cd <your directory>
 $ npm install
 ```

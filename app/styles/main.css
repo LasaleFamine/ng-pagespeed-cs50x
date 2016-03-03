@@ -36,6 +36,10 @@ main {
   padding-bottom: 19px;
 }
 
+.formPg .buttonCol button {
+  margin-top: 26px;
+}
+
 /* Custom page footer */
 .footer {
   padding-top: 19px;
@@ -60,6 +64,23 @@ main {
 .marketing p + h4 {
   margin-top: 28px;
 }
+
+/* Rule impact */
+.ng-scope.success {
+  background-color: green;
+}
+.ng-scope.danger {
+  background-color: red;
+}
+
+.gaugeChart {
+  min-height: 200px;
+  padding-top: 30px;
+}
+.gaugeChart table div div {
+  margin: 0 auto;
+}
+
 
 .animated.bounceIn.done {
   font-size: 50px;

@@ -9,15 +9,32 @@
 
             </div>
           </div>
-          <div google-chart chart="gaugeObject" style="height:130px; width:100%;"></div>
-          <div google-chart chart="chartObject" class=""></div>
-          <p>Rank speed: {{results.ruleGroups.SPEED.score}}</p>
 
-          <ul>
-            <li ng-repeat="(key, value) in results.formattedResults.ruleResults"> {{value.localizedRuleName}}: {{value.summary.format}} </li>
-          </ul>
+          <div google-chart chart="chartObject" class="col m6 s12"></div>
+          <div google-chart chart="gaugeObject" class="col m6 s12 gaugeChart"></div>
 
-          
+          <div class="row">
+            <div class="col m12">
+              
+                <div ng-repeat="(key, value) in results.formattedResults" ng-class="ruleImpact[key]"> 
+                  <h4>{{value.ruleName}}</h4> 
+                  <p class="summary"><span  ng-bind-html="value.summary"> </span> [{{value.ruleImpact}}]</p>
+                  <ul>
+                    <li ng-repeat="block in value.urlBlocks">
+                      <p ng-bind-html="block.head"></p>
+                      <!--ul>
+                        <li ng-repeat="url in block.urls">
+                          {{url}}
+                        </li>
+
+                      </ul-->
+                    </li>
+                  </ul>
+                      
+                </div>
+              
+            </div>
+          </div>
 
         </div>
       </div>
