@@ -10,31 +10,60 @@
             </div>
           </div>
 
-          <div google-chart chart="chartObject" class="col m6 s12"></div>
-          <div google-chart chart="gaugeObject" class="col m6 s12 gaugeChart"></div>
+          <div google-chart chart="chartObject" class="col m9 s12"></div>
+          <div google-chart chart="gaugeObject" class="col m3 s12 gaugeChart"></div>
 
-          <div class="row">
+          <div class="row formattedRes">
             <div class="col m12">
-              
-                <div ng-repeat="(key, value) in results.formattedResults" ng-class="ruleImpact[key]"> 
-                  <h4>{{value.ruleName}}</h4> 
-                  <p class="summary"><span  ng-bind-html="value.summary"> </span> [{{value.ruleImpact}}]</p>
-                  <ul>
-                    <li ng-repeat="block in value.urlBlocks">
-                      <p ng-bind-html="block.head"></p>
-                      <!--ul>
-                        <li ng-repeat="url in block.urls">
-                          {{url}}
-                        </li>
 
-                      </ul-->
-                    </li>
-                  </ul>
-                      
-                </div>
+              <ul class="collapsible popout" data-collapsible="expandable">
+
+                <li ng-repeat="(key, value) in results.formattedResults" ng-class="ruleImpact[key]">
+                    <!-- Head -->
+                    <div class="collapsible-header grey lighten-4"><i class="{{iconImpact[key]}} material-icons">{{iconImpact[key]}}</i>
+                      {{value.ruleName}} [{{value.ruleImpact}}]
+                      <p class="summary"><span ng-bind-html="value.summary"> </span> </p>
+                    </div>
+
+                    <!-- Body ng-repeat urlBlocks-->
+                    <div class="collapsible-body white-text" ng-repeat="block in value.urlBlocks">                      
+                      <p ng-bind-html="block.head"></p>
+                      <div class="blockLinks">
+                        <ul>
+                           <li ng-repeat="url in block.urls track by $index">
+                              <span ng-bind-html="url"></span>
+                           </li>
+                        </ul>
+                      </div> 
+                    </div>
+                </li>
+
+              </ul>
+              
+                <!--div ng-repeat="(key, value) in results.formattedResults" ng-class="ruleImpact[key]">                 
+                  
+                  <div class="card-content white-text" ng-repeat="block in value.urlBlocks">
+                    <span class="card-title">{{value.ruleName}}</span> 
+                    <p class="summary"><span ng-bind-html="value.summary"> </span> [{{value.ruleImpact}}]</p>
+                    <p ng-bind-html="block.head"></p>
+                    <ul>
+                       <li ng-repeat="url in block.urls track by $index">
+                          <span ng-bind-html="url"></span>
+                       </li>
+                    </ul> 
+                  </div>
+                </div-->
               
             </div>
           </div>
 
         </div>
       </div>
+
+      <script>
+        $(document).ready(function(){
+          $('.collapsible').collapsible({
+            accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+          });
+        });
+      </script>

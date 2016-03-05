@@ -1,30 +1,40 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman">
-  </p>
+<div class="jumbotron animated fadeIn">
+  <div class="row">
+    <div class="col m12">
+
+      <p class="lead">
+        <img class="img-responsive" src="images/ng-pageSpeed.png">
+      </p>
+    </div>
+  </div>
 </div>
 
 <div ng-controller="MainCtrl" class="row marketing">
-  <form id="formPgSpeed" class="formPg">
-    <div class="input-field col m8">
-      <input id="site-url" type="text" ng-model="site.url">
-      <label for="site-url"> Site url (ex: http://example.com) </label>
+  <div class="row">
+    <div class="col m12">
+      <form id="formPgSpeed" class="formPg">
+        <div class="input-field col m9 s12 animated slideInLeft">
+          <input id="site-url" type="text" ng-model="site.url" class="validate" required="" aria-required="true">
+          <label for="site-url"> Site url (ex: http://example.com) </label>
+        </div>
+        <div class="col m3 s12 buttonCol animated bounceIn">
+          <button class="btn col s12 blue darken-2 waves-effect waves-light" ng-click="submit()">Submit
+             <i class="material-icons right">send</i>
+          </button>
+        </div>
+      </form>
     </div>
-    <div class="col m4 buttonCol">
-      <button class="btn waves-effect waves-light" ng-click="submit()">Submit
-         <i class="material-icons right">send</i>
-      </button>
-    </div>
-  </form>
+  </div>
   
   <!--h1>You entered: {{site}}</h1-->
   <!-- Results -->
-  <div>
-      <div ng-if="loading" class="progress">
-          <div class="indeterminate"></div>
+  <div class="">
+    <div class="">
+      <div ng-if="loading" class="progress blue darken-2">
+          <div class="indeterminate amber lighten-2"></div>
       </div>
       <div ng-if="results.error === false" ng-include="'views/partials/_pageSpeedResult.html'" class=""></div>
-      <div class="col m12" ng-if="results.error === true">{{results.msg}}</div>    
+      <div class="col m12" ng-if="results.error === true">{{results.msg}}</div>
+    </div>
   </div>
 </div>

@@ -25,11 +25,10 @@
     <!-- Add your site or application content here -->
  <header>
       <nav class="header">
-        <div class="nav-wrapper orange darken-4" role="navigation">
+        <div class="nav-wrapper blue darken-2" role="navigation">
           <div class="container">
-              <a class="brand-logo" href="#/">pagespeed</a>
               <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-              <ul class="right hide-on-med-and-down">
+              <ul class="left hide-on-med-and-down">
                 <li class="active"><a href="#/">Home</a></li>
                 <li><a ng-href="#/about">About</a></li>
                 <li><a ng-href="#/">Contact</a></li>
@@ -46,7 +45,7 @@
 
     <main>
       <div class="container">
-        <div ng-view=""  class="animated fadeIn">
+        <div ng-view=""  class="">
           <div class="center-align">
             <div class="preloader-wrapper big active">
               <div class="spinner-layer spinner-blue">
@@ -66,7 +65,7 @@
       </div>
     </main>
 
-    <footer class="page-footer">
+    <footer class="page-footer amber darken-2">
       <div class="container">
         <div class="row">
           <div class="col l6 s12">
@@ -124,6 +123,7 @@
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
         <script src="scripts/services/pgspeed.js"></script>
+        <script src="scripts/filters/toarray.js"></script>
         <!-- endbuild -->
          <script>
           $(function(){
