@@ -21,7 +21,9 @@
                 <li ng-repeat="(key, value) in results.formattedResults" ng-class="ruleImpact[key]">
                     <!-- Head -->
                     <div class="collapsible-header grey lighten-4"><i class="{{iconImpact[key]}} material-icons">{{iconImpact[key]}}</i>
-                      {{value.ruleName}} [{{value.ruleImpact}}]
+                      <p class="summaryTitle">
+                        <span class="ruleName">{{value.ruleName}}</span> <span class="ruleImpact">[{{value.ruleImpact}}]</span>
+                      </p>
                       <p class="summary"><span ng-bind-html="value.summary"> </span> </p>
                     </div>
 
@@ -31,7 +33,7 @@
                       <div class="blockLinks">
                         <ul>
                            <li ng-repeat="url in block.urls track by $index">
-                              <span ng-bind-html="url"></span>
+                              <div ng-bind-html="url" class="row"></div>
                            </li>
                         </ul>
                       </div> 

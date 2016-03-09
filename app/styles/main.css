@@ -66,6 +66,30 @@ main {
   margin-top: 28px;
 }
 
+
+
+/** Footer  **/
+
+.socialList {
+  font-size: 28px;
+}
+.socialList a {
+  padding: 2px;
+  -webkit-transition: ease-in-out 0.2s; /* Safari */
+  transition: ease-in-out 0.2s;
+}
+
+/* Social colors */
+
+a.github:hover {
+  color: #444!important;
+}
+a.twitt:hover {
+  color: #55ACEE!important;
+}
+.linkedin:hover {
+  color: #0077B5!important;
+}
 /* Rule impact */
 .ng-scope.success {
   background-color: green;
@@ -77,6 +101,7 @@ main {
 .formattedRes p.summary {
   margin-top: 10px;
   margin-bottom: 20px;
+  line-height: 1.6;
 }
 
 .containerRes {
@@ -109,6 +134,10 @@ main {
 .amber.darken-2 a,
 .red.darken-3 a  {
   color: #FFF;
+}
+
+.long-url {
+  word-wrap: break-word;
 }
 
 

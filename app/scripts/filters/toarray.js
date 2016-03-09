@@ -16,7 +16,7 @@ angular.module('ngPgspeedApp')
         }
 
         return Object.keys(obj).map(function (key) {
-            return Object.defineProperty(obj[key], '$key', {__proto__: null, value: key});
+            return Object.defineProperty(obj[key], '$key', {value: key});
         });
     };
   });

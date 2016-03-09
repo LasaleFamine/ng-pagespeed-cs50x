@@ -59,7 +59,7 @@ angular.module('ngPgspeedApp')
     		$scope.results = [];        		
     		$scope.results.error = true;        		  		
     		$scope.results.msg = 'You must fill the form with a website';
-    		return
+    		return;
     	}
 
     	// Start loading bar
@@ -105,7 +105,7 @@ angular.module('ngPgspeedApp')
 
 
         			// Check for wrost 'ruleImpact' and put the class
-    				if(parseFloat(value.ruleImpact) == 0) {
+    				if(parseFloat(value.ruleImpact) === 0) {
     					$scope.ruleImpact[key] = 'green darken-2';
     					$scope.iconImpact[key] = 'verified_user';
     				} else if(parseFloat(value.ruleImpact) < 1.00) {
@@ -196,12 +196,12 @@ angular.module('ngPgspeedApp')
 		    'rows': chartRows
 		  },
 		  'options': {
-		    'title': 'Sales per month',
+		    'title': 'Response Resources',
 		    'isStacked': 'true',
 		    'fill': 20,
 		    'displayExactValues': true,
 		    'vAxis': {
-		      'title': 'Sales unit',
+		      'title': 'Response unit',
 		      'gridlines': {
 		        'count': 10
 		      }
@@ -314,7 +314,7 @@ angular.module('ngPgspeedApp')
 						}
 
 						if(plusval.result.format.indexOf('{{URL}}') !== -1) {
-							head = head.replace(/{{URL}}/g, '<strong>' + url + '</strong><br>');
+							head = head.replace(/{{URL}}/g, '<div class="col m10"><span class="long-url">' + url + '</span></div>');
 						}
 						
 						if(plusval.result.format.indexOf('{{SIZE_IN_BYTES}}') !== -1) {
@@ -330,7 +330,7 @@ angular.module('ngPgspeedApp')
 						}
 
 						if(plusval.result.format.indexOf('{{LIFETIME}}') !== -1) {
-							head = head.replace(/{{LIFETIME}}/g, '<strong>' + lifetime + '</strong>');
+							head = head.replace(/{{LIFETIME}}/g, '<strong>(' + lifetime + ')</strong>');
 						}
 
 						if(plusval.result.format.indexOf('{{PERCENTAGE}}') !== -1) {

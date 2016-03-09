@@ -2,9 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>ng-PageSpeed</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
@@ -16,6 +18,7 @@
     <!-- endbuild -->
     <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.0/animate.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   </head>
   <body ng-app="ngPgspeedApp">
     <!--[if lte IE 8]>
@@ -69,24 +72,24 @@
       <div class="container">
         <div class="row">
           <div class="col l6 s12">
-            <h5 class="white-text">Footer Content</h5>
-            <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+            <h5 class="white-text">ng-PageSpeed Insights</h5>
+            <p class="grey-text text-lighten-4">Simple Page Speed insights using <a target="_blank" href="https://developers.google.com/speed/docs/insights/v2/getting-started"><strong>PageSpeed API by Google</strong></a> and the PageSpeed module for AngularJs. Fill the form and see your page speed results.</p>
+            <p  class="grey-text text-lighten-4"><strong>NOTE: your page must be available online to make the test.</strong></p>
           </div>
           <div class="col l4 offset-l2 s12">
-            <h5 class="white-text">Links</h5>
-            <ul>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-            </ul>
+            <h5 class="white-text">Keep in touch</h5>
+            <div class="socialList">
+              <a class="grey-text text-lighten-3 github" href="#!"><i class="fa fa-github-square"></i></a>
+              <a class="grey-text text-lighten-3 twitt" href="#!"><i class="fa fa-twitter-square"></i></a>
+              <a class="grey-text text-lighten-3 linkedin" href="#!"><i class="fa fa-linkedin-square"></i></a>
+            </div>
           </div>
         </div>
       </div>
       <div class="footer-copyright">
         <div class="container">
-        © 2014 Copyright Text
-        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        &copy Crafted with <i class="fa fa-heart"></i> for CS50x16 by <a target="_blank" href="https://github.com/LasaleFamine">AO</a>
+        <!--a class="grey-text text-lighten-4 right" href="#!">More Links</a-->
         </div>
       </div>
     </footer>
