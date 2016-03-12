@@ -47,20 +47,23 @@ angular.module('ngPgspeedApp')
 
 
 	/**
-	 * @submit
-	 *	
+	 * @func submit
+	 * @description: send the url to NodeJs service, get and format the results
 	 */
     $scope.submit = function() {
 
-    	$scope.results = {}; 
+    	console.log($scope.results.error);
+    	$scope.results = {};
+    	console.log($scope.results.error);
 
-    	//console.log($scope.site);
-    	if(angular.isUndefined($scope.site)) {
+    	// Check if url is undefined
+    	if(angular.isUndefined($scope.site) || angular.isUndefined($scope.site.url)) {
     		$scope.results = [];        		
     		$scope.results.error = true;        		  		
-    		$scope.results.msg = 'You must fill the form with a website';
+    		$scope.results.msg = 'Error: you must fill the form with an url.';
     		return;
     	}
+
 
     	// Start loading bar
     	$scope.loading = true;
@@ -70,12 +73,20 @@ angular.module('ngPgspeedApp')
 
     	// === Call the PageSpeed Service === //
     	pageSpeed.getPageSpeed($scope.site).then(function(data){
-    		console.log('=========== DATA =========');
-        	console.log(data);
-        	console.log('=========== DATA =========');
+    		// Debug 
+    		//console.log('=========== DATA =========');
+        	//console.log(data);
+        	//console.log('=========== DATA =========');
+
+        	// If data response with a status code
+        	if(data.code) {
+        		$scope.results = [];	
+        		$scope.results.error = true;
+        		//console.log(data.errors[0].message);	  		
+        		$scope.results.msg = data.errors[0].message;
 
         	// If data OK
-        	if(!data.status && !data.code && !angular.equals({}, data)) {
+        	} else if(!data.status && !data.code && !angular.equals({}, data)) {
 
         		// Setup results object
         		$scope.results.pageStats = data.pageStats;
@@ -142,13 +153,6 @@ angular.module('ngPgspeedApp')
 
         		// Sett error to false
         		$scope.results.error = false;
-
-        	// If data response with a status code
-        	} else if(data.code) {
-        		$scope.results = [];	
-        		$scope.results.error = true;
-        		console.log(data.errors[0].message);	  		
-        		$scope.results.msg = data.errors[0].message;
 
         	// Else every error
         	} else {
@@ -314,7 +318,7 @@ angular.module('ngPgspeedApp')
 						}
 
 						if(plusval.result.format.indexOf('{{URL}}') !== -1) {
-							head = head.replace(/{{URL}}/g, '<div class="col m10"><span class="long-url">' + url + '</span></div>');
+							head = head.replace(/{{URL}}/g, '<span class="long-url">' + url + '</span>');
 						}
 						
 						if(plusval.result.format.indexOf('{{SIZE_IN_BYTES}}') !== -1) {
@@ -330,7 +334,7 @@ angular.module('ngPgspeedApp')
 						}
 
 						if(plusval.result.format.indexOf('{{LIFETIME}}') !== -1) {
-							head = head.replace(/{{LIFETIME}}/g, '<strong>(' + lifetime + ')</strong>');
+							head = head.replace(/\({{LIFETIME}}\)/g, '<br> Lifetime: <strong>(' + lifetime + ')</strong>');
 						}
 
 						if(plusval.result.format.indexOf('{{PERCENTAGE}}') !== -1) {

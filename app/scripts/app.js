@@ -19,16 +19,21 @@ angular
     'googlechart'
   ])
   .config(function ($routeProvider) {
+
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
-        controllerAs: 'main'
+        controllerAs: 'main',
+        titlePage: 'Home',
+        state: '1'
       })
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
-        controllerAs: 'about'
+        controllerAs: 'about',
+        titlePage: 'About',
+        state: '2'
       })
       .otherwise({
         redirectTo: '/'

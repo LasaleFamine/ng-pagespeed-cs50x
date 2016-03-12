@@ -1,3 +1,5 @@
+/* ==== Core CSS ====*/
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -10,11 +12,14 @@ body {
   min-height: 100vh;
   flex-direction: column;
 }
-
-
 main {
   flex: 1 0 auto;
 }
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset!important;
+}
+
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
@@ -24,41 +29,21 @@ main {
   padding-right: 15px;
 }
 
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-  margin-bottom: 10px;
-}
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 40px;
-  padding-bottom: 19px;
-}
-
 .formPg .buttonCol button {
   margin-top: 26px;
-}
-
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
 }
 
 .container-narrow > hr {
   margin: 30px 0;
 }
 
-/* Main marketing message and sign up button */
+/** ---- Jumbotron ---- **/
 .jumbotron {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
 }
 
-/* Supporting marketing content */
+/** ---- Supporting marketing content ---- **/
 .marketing {
   margin: 40px 0;
 }
@@ -66,10 +51,7 @@ main {
   margin-top: 28px;
 }
 
-
-
-/** Footer  **/
-
+/** ---- Footer ----  **/
 .socialList {
   font-size: 28px;
 }
@@ -78,9 +60,7 @@ main {
   -webkit-transition: ease-in-out 0.2s; /* Safari */
   transition: ease-in-out 0.2s;
 }
-
 /* Social colors */
-
 a.github:hover {
   color: #444!important;
 }
@@ -90,24 +70,23 @@ a.twitt:hover {
 .linkedin:hover {
   color: #0077B5!important;
 }
-/* Rule impact */
-.ng-scope.success {
-  background-color: green;
-}
-.ng-scope.danger {
-  background-color: red;
-}
+/* ==== END Core CSS ====*/
 
+
+
+/* ==== Main View CSS ====*/
+.formattedRes .summaryTitle {
+  font-weight: bold;
+  line-height: 40px;
+}
 .formattedRes p.summary {
   margin-top: 10px;
   margin-bottom: 20px;
   line-height: 1.6;
 }
-
 .containerRes {
   margin-top: 30px;
 }
-
 .warning.material-icons {
   color: red;
 }
@@ -117,31 +96,17 @@ a.twitt:hover {
 .info.material-icons {
   color: orange;
 }
-
-.img-responsive {
-  max-width: 100%;
-}
-
 .logo {
   width: 250px;
 }
+/* ==== END Main View CSS ==== */
 
-/*** LINK mod **/
 
+
+/* ==== pageResult partial CSS ==== */
 .collapsible-body a {
   border-bottom: 2px solid;
 }
-.amber.darken-2 a,
-.red.darken-3 a  {
-  color: #FFF;
-}
-
-.long-url {
-  word-wrap: break-word;
-}
-
-
-
 .gaugeChart {
   min-height: 200px;
   padding-top: 30px!important;
@@ -149,19 +114,49 @@ a.twitt:hover {
 .gaugeChart table div div {
   margin: 0 auto;
 }
-
 .blockLinks {
   margin: 0px 35px 35px;
 }
-
-
 .animated.bounceIn.done {
   font-size: 50px;
 }
+/* ==== END pageResult partial CSS ==== */
 
 
 
-/*** CUSTOMIZE Materilize CSS input color ***/
+
+
+
+
+/* ==== Helpers ==== */
+.animDelay1 {
+  -webkit-animation-delay: 1s; /* Safari */
+  animation-delay: 1s;
+}
+.animDelay2 {
+  -webkit-animation-delay: 2s; /* Safari */
+  animation-delay: 2s;
+}
+.animDelay3 {
+  -webkit-animation-delay: 3s; /* Safari */
+  animation-delay: 3s;
+}
+.img-responsive {
+  max-width: 100%;
+}
+.amber.darken-2 a,
+.red.darken-3 a  {
+  color: #FFF;
+}
+.long-url {
+  word-wrap: break-word;
+  word-break: break-all;
+}
+/* ==== END Helpers ==== */
+
+
+
+/*** ==== CUSTOMIZE Materilize CSS input color ==== ***/
   /* label color */
    .input-field label {
      color: #1976D2;
@@ -189,9 +184,10 @@ a.twitt:hover {
    .input-field .prefix.active {
      color: #1976D2;
    }
+/*** ==== END CUSTOMIZE Materilize CSS input color ==== ***/
 
 
-
+/*** ==== Media Query ==== ***/
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
@@ -214,3 +210,4 @@ a.twitt:hover {
     border-bottom: 0;
   }
 }
+/*** ==== END Media Query ==== ***/

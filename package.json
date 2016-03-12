@@ -1,6 +1,13 @@
 {
-  "name": "ngpgspeed",
-  "private": true,
+  "name": "ng-pagespeed",
+  "version": "1.0.0",
+  "author": "LasaleFamine",
+  "description": "PageSpeed Insights using PageSpeed API and AngularJs",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/LasaleFamine/ng-pagespeed-cs50x.git"
+  },
+  "license": "ISC",
   "devDependencies": {
     "autoprefixer-core": "^5.2.1",
     "grunt": "^0.4.5",

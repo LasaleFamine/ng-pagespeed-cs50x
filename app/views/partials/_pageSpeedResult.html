@@ -2,7 +2,8 @@
         <div class="col m12">
           <div class="card light-green darken-2">
             <div class="card-content white-text">
-              <span class="card-title">{{results.title}} <i class="material-icons right animated bounceIn done">done</i> </span>
+              <span class="card-title">
+                <span class="resultTitle">{{results.title}}</span> <i class="material-icons right animated bounceIn done">done</i> </span>
               <span class="right-align">{{results.id}}</span>
               
               <p>Response code: {{results.responseCode}}</p>
@@ -18,11 +19,11 @@
 
               <ul class="collapsible popout" data-collapsible="expandable">
 
-                <li ng-repeat="(key, value) in results.formattedResults" ng-class="ruleImpact[key]">
+                <li ng-repeat="(key, value) in results.formattedResults" ng-class="ruleImpact[key].bck">
                     <!-- Head -->
                     <div class="collapsible-header grey lighten-4"><i class="{{iconImpact[key]}} material-icons">{{iconImpact[key]}}</i>
                       <p class="summaryTitle">
-                        <span class="ruleName">{{value.ruleName}}</span> <span class="ruleImpact">[{{value.ruleImpact}}]</span>
+                        <span class="ruleName">{{value.ruleName}}</span> <span class="ruleImpact right" ng-class="ruleImpact[key].color">Rule impact: [{{value.ruleImpact | number:2 }}]</span>
                       </p>
                       <p class="summary"><span ng-bind-html="value.summary"> </span> </p>
                     </div>

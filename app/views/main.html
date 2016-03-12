@@ -1,7 +1,6 @@
 <div class="jumbotron animated fadeIn">
   <div class="row">
     <div class="col m12">
-
       <p class="lead">
         <img class="img-responsive" src="images/ng-pageSpeed.png">
       </p>
@@ -34,7 +33,11 @@
           <div class="indeterminate amber lighten-2"></div>
       </div>
       <div ng-if="results.error === false" ng-include="'views/partials/_pageSpeedResult.html'" class=""></div>
-      <div class="col m12" ng-if="results.error === true">{{results.msg}}</div>
+      <div class="col m12 red darken-2 white-text z-depth-3 animated tada" ng-if="results.error === true">
+        <p>
+          <i class="material-icons left">report_problem</i> {{results.msg}} 
+        </p>        
+      </div>
     </div>
   </div>
 </div>
