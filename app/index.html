@@ -155,10 +155,18 @@
         <script src="scripts/filters/toarray.js"></script>
         <script src="scripts/controllers/menu.js"></script>
         <!-- endbuild -->
-         <script>
-          $(function(){
-            $(".button-collapse").sideNav();
-          });
+        <!-- Minified Cookie Consent served from our CDN -->
+        <script>
+            $(function(){
+              $(".button-collapse").sideNav();
+            });
+
+            window.cookieconsent_options = {
+                //learnMore: 'More info',
+                //link: 'http://example.com/cookiepolicy',
+                theme: 'styles/cookie-theme.css'
+            };
         </script>
+        <script async src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
 </body>
 </html>
