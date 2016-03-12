@@ -12,6 +12,7 @@ If you want try yourself, you need first `nodejs 5.x`, `npm`, `bower`, `grunt`, 
 $ git clone https://github.com/LasaleFamine/ng-pagespeed-cs50x [optional name]
 $ cd <your directory>
 $ npm install
+$ bower install
 ```
 
 #### Run
