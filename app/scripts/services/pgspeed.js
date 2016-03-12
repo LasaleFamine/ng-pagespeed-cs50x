@@ -11,7 +11,7 @@ angular.module('ngPgspeedApp')
   .factory('pageSpeed', function ($http) {
     // Service logic
     // ...
-    var url = 'http://godev.space/api/exp';
+    var url = 'https://godev.space/pgspeedService/api/exp';
     // Public API here
     return {
       getPageSpeed: function (params) {
