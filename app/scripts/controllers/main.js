@@ -52,9 +52,7 @@ angular.module('ngPgspeedApp')
 	 */
     $scope.submit = function() {
 
-    	console.log($scope.results.error);
     	$scope.results = {};
-    	console.log($scope.results.error);
 
     	// Check if url is undefined
     	if(angular.isUndefined($scope.site) || angular.isUndefined($scope.site.url)) {
@@ -390,7 +388,7 @@ angular.module('ngPgspeedApp')
 	function parseSummary(value, $theScope) {
 		var summ = value.summary.format;
 		var linkInit, nScripts, nCss, nRedirects;
-		console.log(value);
+		//console.log(value);
 
 		if(value.summary.args) {
 			angular.forEach(value.summary.args, function(item) {

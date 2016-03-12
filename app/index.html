@@ -4,26 +4,26 @@
     <meta charset="utf-8">
     <title>ng-PageSpeed</title>
     <meta name="description" content="Simple Page Speed insights using PageSpeed API by Google. This is also the final project of CS50x2016">
-    <meta name="viewport" content="width=device-width">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
     <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
 
     <!-- Meta -->
-    <meta property="og:url" content="" />
+    <meta property="og:url" content="https://godev.space/ng-ps" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="ng-PageSpeed - CS50x16 Final Project" />
     <meta property="og:description" content="Simple Page Speed insights using PageSpeed API by Google. This is also the final project of CS50x2016" />
-    <meta property="og:image" content="" />
+    <meta property="og:image" content="https://godev.space/static/ng-ps/imgs/ng-ps.png" />
 
     <!-- Schema json -->
     <script type="application/ld+json">
       {
         "@context": "http://schema.org",
         "@type": "WebSite",
-        "url": "",
-        "name": "",
-        "description": "",
-        "image": ""
+        "url": "https://godev.space/ng-ps",
+        "name": "ng-PageSpeed",
+        "description": "Simple Page Speed insights using PageSpeed API by Google. This is also the final project of CS50x2016",
+        "image": "https://godev.space/static/ng-ps/imgs/ng-ps.png"
       }
     </script>
 
@@ -36,7 +36,7 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.0/animate.css" />
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.0/animate.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -128,7 +128,7 @@
        r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
        }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-       ga('create', 'UA-XXXXX-X');
+       ga('create', 'UA-74988372-1');
        ga('send', 'pageview');
     </script>
 
@@ -155,10 +155,18 @@
         <script src="scripts/filters/toarray.js"></script>
         <script src="scripts/controllers/menu.js"></script>
         <!-- endbuild -->
-         <script>
-          $(function(){
-            $(".button-collapse").sideNav();
-          });
+        <!-- Minified Cookie Consent served from our CDN -->
+        <script>
+            $(function(){
+              $(".button-collapse").sideNav();
+            });
+
+            window.cookieconsent_options = {
+                //learnMore: 'More info',
+                //link: 'http://example.com/cookiepolicy',
+                theme: '/static/ng-ps/styles/cookie-theme.min.css'
+            };
         </script>
+        <script async src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
 </body>
 </html>
