@@ -17,7 +17,7 @@ angular.module('ngPgspeedApp')
         $rootScope.currentPath = $route.current.$$route.originalPath;
         $rootScope.currentTitle = $route.current.$$route.titlePage;
         $scope.states.activeItem = $rootScope.currentState;
-        console.log($rootScope.currentPath);
+        //console.log($rootScope.currentPath);
     });
     
     

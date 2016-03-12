@@ -19,11 +19,11 @@
 
               <ul class="collapsible popout" data-collapsible="expandable">
 
-                <li ng-repeat="(key, value) in results.formattedResults" ng-class="ruleImpact[key].bck">
+                <li ng-repeat="(key, value) in results.formattedResults" ng-class="ruleImpact[key]">
                     <!-- Head -->
                     <div class="collapsible-header grey lighten-4"><i class="{{iconImpact[key]}} material-icons">{{iconImpact[key]}}</i>
                       <p class="summaryTitle">
-                        <span class="ruleName">{{value.ruleName}}</span> <span class="ruleImpact right" ng-class="ruleImpact[key].color">Rule impact: [{{value.ruleImpact | number:2 }}]</span>
+                        <span class="ruleName">{{value.ruleName}}</span> <span class="ruleImpact right">Rule impact: [{{value.ruleImpact | number:2 }}]</span>
                       </p>
                       <p class="summary"><span ng-bind-html="value.summary"> </span> </p>
                     </div>
