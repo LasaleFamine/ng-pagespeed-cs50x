@@ -105,9 +105,9 @@
           <div class="col l4 offset-l2 s12 white-text">
             <h5>Keep in touch</h5>
             <div class="socialList">
-              <a class="grey-text text-lighten-3 github" rel="nofollow" target="_blank" href="https://github.com/LasaleFamine"><i class="fa fa-github-square"></i></a>
-              <a class="grey-text text-lighten-3 twitt" rel="nofollow" target="_blank" href="https://twitter.com/Lasalefamine"><i class="fa fa-twitter-square"></i></a>
-              <a class="grey-text text-lighten-3 linkedin" rel="nofollow" target="_blank" href="https://it.linkedin.com/in/alessioocchipinti"><i class="fa fa-linkedin-square"></i></a>
+              <a class="grey-text text-lighten-3 github" rel="nofollow" target="_blank" href="https://github.com/LasaleFamine" analytics-on="click" analytics-event="git-footer"><i class="fa fa-github-square"></i></a>
+              <a class="grey-text text-lighten-3 twitt" rel="nofollow" target="_blank" href="https://twitter.com/Lasalefamine" analytics-on="click" analytics-event="twitter-footer"><i class="fa fa-twitter-square"></i></a>
+              <a class="grey-text text-lighten-3 linkedin" rel="nofollow" target="_blank" href="https://it.linkedin.com/in/alessioocchipinti" analytics-on="click" analytics-event="linkedin-footer"><i class="fa fa-linkedin-square"></i></a>
             </div>
           </div>
         </div>
@@ -115,7 +115,7 @@
       <div class="footer-copyright">
         <div class="container">
         &copy Crafted with <i class="fa fa-heart"></i> for CS50x16 by <a target="_blank" href="https://github.com/LasaleFamine">AO</a>
-        <a class="grey-text text-lighten-4 right" href="https://github.com/LasaleFamine/ng-pagespeed-cs50x">Check the source on  <i class="fa fa-github"></i></a>
+        <a class="grey-text text-lighten-4 right" href="https://github.com/LasaleFamine/ng-pagespeed-cs50x" analytics-on="click" analytics-event="ng-PageSpeed-git-footer">Check the source on  <i class="fa fa-github"></i></a>
         </div>
       </div>
     </footer>
@@ -129,7 +129,7 @@
        }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
        ga('create', 'UA-74988372-1');
-       ga('send', 'pageview');
+       //ga('send', 'pageview');
     </script>
 
     <!-- build:js(.) scripts/vendor.js -->
@@ -144,6 +144,9 @@
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/Materialize/bin/materialize.js"></script>
     <script src="bower_components/angular-google-chart/ng-google-chart.js"></script>
+    <script src="bower_components/SHA-1/sha1.js"></script>
+    <script src="bower_components/angulartics/src/angulartics.js"></script>
+    <script src="bower_components/angulartics-google-analytics/lib/angulartics-google-analytics.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

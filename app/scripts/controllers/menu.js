@@ -8,7 +8,7 @@
  * Controller of the ngPgspeedApp
  */
 angular.module('ngPgspeedApp')
-  .controller('MenuCtrl', function ($scope, $rootScope, $route) {
+  .controller('MenuCtrl', function ($scope, $rootScope, $route, $analytics) {
 
     // Get the route on changeSuccess
     $scope.states = {};
@@ -17,7 +17,9 @@ angular.module('ngPgspeedApp')
         $rootScope.currentPath = $route.current.$$route.originalPath;
         $rootScope.currentTitle = $route.current.$$route.titlePage;
         $scope.states.activeItem = $rootScope.currentState;
-        //console.log($rootScope.currentPath);
+        // Analytics tracking
+        $analytics.pageTrack($rootScope.currentPath);
+        console.log($rootScope.currentPath);
     });
     
     

@@ -8,7 +8,7 @@
  * Controller of the ngPgspeedApp
  */
 angular.module('ngPgspeedApp')
-  .controller('MainCtrl', function ($scope, pageSpeed) {
+  .controller('MainCtrl', function ($scope, pageSpeed, $analytics) {
     //$scope.site = { 'url': 'http://www.example.com' };
 
     $scope.results = {};    
@@ -59,6 +59,8 @@ angular.module('ngPgspeedApp')
     		$scope.results = [];        		
     		$scope.results.error = true;        		  		
     		$scope.results.msg = 'Error: you must fill the form with an url.';
+    		// ==== Analytics ==== //
+    		$analytics.eventTrack('Form not filled', {  category: 'error', value: 0 });
     		return;
     	}
 
@@ -82,9 +84,16 @@ angular.module('ngPgspeedApp')
         		$scope.results.error = true;
         		//console.log(data.errors[0].message);	  		
         		$scope.results.msg = data.errors[0].message;
+        		// ==== Analytics ==== //
+        		$analytics.eventTrack('Request Error', {  category: 'error', label: data.errors[0].message, value: 0 });
 
         	// If data OK
         	} else if(!data.status && !data.code && !angular.equals({}, data)) {
+
+        		// ==== Analytics ==== //
+        		$analytics.eventTrack('Request Completed', {  category: data.id, label: data.title, value: 1 });
+        		$analytics.eventTrack('Response Code', {  category: data.id, label: data.responseCode, value: 1 });
+        		// END Analytics ==== //
 
         		// Setup results object
         		$scope.results.pageStats = data.pageStats;
@@ -146,6 +155,11 @@ angular.module('ngPgspeedApp')
 			      ['Page Speed', data.ruleGroups.SPEED.score]
 			    ];
 
+			    // ==== Analytics ==== //
+        		$analytics.eventTrack('PageSpeedScore', {   category: data.id, label: data.ruleGroups.SPEED.score, value: 1 });
+        		// END Analytics ==== //
+        		
+
 			    // call the InitChart func to init the chart
         		$scope.initChart(data.pageStats);
 
@@ -157,6 +171,9 @@ angular.module('ngPgspeedApp')
         		$scope.results = [];        		
         		$scope.results.error = true;        		  		
         		$scope.results.msg = 'Error';
+        		// ==== Analytics ==== //
+        		$analytics.eventTrack('undefined Error', { category: 'error', value: 0 });
+        		// END Analytics ==== //
         	}
 
         	// Stop loading bar
