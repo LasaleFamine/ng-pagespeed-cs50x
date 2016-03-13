@@ -16,9 +16,14 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'googlechart'
+    'googlechart',
+    'angulartics', 
+    'angulartics.google.analytics'
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, $analyticsProvider) {
+
+    // turn off automatic tracking
+    $analyticsProvider.virtualPageviews(false);
 
     $routeProvider
       .when('/', {
