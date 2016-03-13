@@ -70,6 +70,12 @@ a.twitt:hover {
 .linkedin:hover {
   color: #0077B5!important;
 }
+
+.ads-container {
+  width: 100%;
+  margin: 24px 0 0 0;
+}
+
 /* ==== END Core CSS ====*/
 
 
